@@ -71,6 +71,7 @@
     <script>
         function OnChangeMoney(){
            let input = document.querySelector('.amount').value
+           if(input < 1) return alert('Giá trị nhập vào phải lớn hơn 1')
            let select1 = document.querySelector('.select-1').value
            let select2 = document.querySelector('.select-2').value
            let CurrencyId = document.getElementById('select-2')
