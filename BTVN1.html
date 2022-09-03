@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./BTVN.css">
+    <title>Document</title>
+</head>
+<style>
+    .container-body{
+        display: flex;
+        gap: 50px;
+    }
+    .title-select{
+        margin-bottom: 5px;
+        text-align: center;
+        font-weight: bolder;
+    }
+    select{
+        width: 100px;
+        height: 31px;
+    }
+    input{
+        height: 24px
+    }
+    button{
+        margin-top: 22px;
+        width: 84px;
+        height: 31px;
+        font-weight: bolder;
+        color: white;
+        background-color: #8f82cf;
+        border: none;
+        border-radius: 3px;
+    }
+    .result{
+        margin-top: 20px;
+    }
+</style>
+<body>
+    <div class="container">
+        <h2>Money Caculator</h2>
+        <div class="container-body">
+            <div class="title">
+                <div class="title-select">Amount</div>
+                <input type="number" class="amount" />
+            </div>
+            <div class="title">
+                <div class="title-select">From Currency</div>
+                <select class="select-1" id="select-1">
+                    <option value="0">VietNam</option>
+                    <option value="1">CAD</option>
+                    <option value="2">USD</option>
+                </select>
+            </div>
+            <div class="title">
+                <div class="title-select">To Currency</div>
+                <select class="select-2" id="select-2">
+                    <option value="0">VietNam</option>
+                    <option value="1">CAD</option>
+                    <option value="2">USD</option>
+                </select>
+            </div>
+            <div class="title">
+                <button onclick=OnChangeMoney()>Convert</button>
+            </div>
+        </div>
+        <div class="result"></div>
+    </div>
+    <script>
+        function OnChangeMoney(){
+           let input = document.querySelector('.amount').value
+           let select1 = document.querySelector('.select-1').value
+           let select2 = document.querySelector('.select-2').value
+           let CurrencyId = document.getElementById('select-2')
+           let Currency = CurrencyId.options[CurrencyId.selectedIndex].text
+           if(Currency === 'VietNam') Currency = 'VND'
+           let valueMoney = [1,10000,25000]
+           let result = input*(valueMoney[select1]/valueMoney[select2])
+           document.querySelector('.result').innerHTML = `Result: ${result} ${Currency}`
+        }
+    </script>
+</body>
+</html>
