@@ -53,6 +53,7 @@
             }
             console.log(fakeBoard)
         }
+        let isEnd = false
         let player1 = true
         function play(x,y){
             console.log(x,y)
@@ -76,7 +77,6 @@
             let q = 0
             let w = 16
             let z = 1
-            let isEnd = false
             for(let p=1; p<=2; p++){
                 // lap dao nguoc 
                 for(let i=q; i*z<w*z; i = i+1*z){
