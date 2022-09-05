@@ -44,6 +44,8 @@
                 fakeBoard[i].push('.')
             }
         }
+        let isEnd = false
+        let player1 = true
         function reset(){
             for(let i=0; i<=19; i++){
                 for(let j=0; j<=19; j++){
@@ -51,10 +53,9 @@
                     fakeBoard[i][j] = '.'
                 }
             }
+            isEnd = false
             console.log(fakeBoard)
         }
-        let isEnd = false
-        let player1 = true
         function play(x,y){
             console.log(x,y)
             let select = document.querySelector(`.checkBox-${x}-${y}`)
