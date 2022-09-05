@@ -7,33 +7,51 @@
   <title>Document</title>
 </head>
 <style>
-  ul{
-    list-style-type: disc;
+  span{
+    font-weight: lighter;
+    font-size: 17px;
+  }
+  .container{
+    display: flex;
+  }
+  img{
+      width: 100px;
+      height: 100px;
+      background-size: contain;
+      margin-left: -200px;
+  }
+  .container{
+    border: 2px solid red;
+    padding: 20px;
+    width: 43%;
+    height: 100%;
   }
 </style>
 <body>
-    <ul>
-      <li><h3>Việt Nam</h3></li>
-      <ol>
-        <li>Hà Nội</li>
-        <li>Sài gòn</li>
-        <li>Huế</li>
-        <li>Đà Nẵng</li>
-      </ol>
-      <li><h3>Hoa Kì</h3></li>
-      <ol>
-        <li>New York</li>
-        <li>Los Angeles</li>
-        <li>Chicago</li>
-        <li>Houston</li>
-      </ol>
-      <li><h3>Trung Quốc</h3></li>
-      <ol>
-        <li>Beijing</li>
-        <li>Chongqing</li>
-        <li>Sanghai</li>
-        <li>Tianjin</li>
-      </ol>
-    </ul>
+  <div class="container">
+      <div class="content">
+          <h1>CV CÁ NHÂN</h1>
+          <h3>Họ và tên: <span>Trần Văn Trung</span></h3>
+          <h3>Địa chỉ: <span>28 Nguyễn Tri Phương</span></h3>
+          <h3>Số điện thoại: <span>0896554332</span></h3>
+          <h3>Email: <span>trungtran123@gmail.com</span></h3>
+          <h3>Học vấn: <span>Đại học</span></h3>
+          <h3>Bằng cấp: <span>Chứng chỉ Công nghệ thông tin</span></h3>
+          <h3>Kĩ năng:</h3>
+          <ul>
+              <li><h3>Thuyết trình: <span>Tốt</span></h3></li>
+              <li><h3>Lập trình: <span>Tốt</span></h3></li>
+              <li><h3>Giao tiếp: <span>Tốt</span></h3></li>
+          </ul>
+          <h3>Kinh nghiệm:</h3>
+          <ul>
+              <li><span>Cài win dạo từ năm 2010</span></li>
+              <li><span>Giao tiếp với người nội địa ở mức tốt</span></li>
+              <li><span>Viết chương trình hiển thị 'Hello World' bằng tất cả ngôn ngữ lập trình</span></li>
+          </ul>
+          <h3>Định hướng phát triển: <span>Trở thành 1 Lập trình viên giỏi trong tương lai</span></h3>
+      </div>
+  <img src="https://haycafe.vn/wp-content/uploads/2021/11/Anh-avatar-dep-chat-lam-hinh-dai-dien.jpg" alt="">
+  </div>
 </body>
 </html>
