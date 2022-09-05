@@ -1,57 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
 <style>
-  span{
-    font-weight: lighter;
-    font-size: 17px;
-  }
-  .container{
-    display: flex;
-  }
-  img{
-      width: 100px;
-      height: 100px;
-      background-size: contain;
-      margin-left: -200px;
-  }
-  .container{
-    border: 2px solid red;
-    padding: 20px;
-    width: 43%;
-    height: 100%;
+  .wufoo {
+      font-family: "Lucida Grande","Lucida Sans Unicode", Tahoma, sans-serif;
+      box-shadow: blue 0px 0px 30px 0px;
+      width: 25%;
+      height: 90%;
+      padding: 20px;
+      margin-left: 30%;
   }
 </style>
 <body>
-  <div class="container">
-      <div class="content">
-          <h1>CV CÁ NHÂN</h1>
-          <h3>Họ và tên: <span>Trần Văn Trung</span></h3>
-          <h3>Địa chỉ: <span>28 Nguyễn Tri Phương</span></h3>
-          <h3>Số điện thoại: <span>0896554332</span></h3>
-          <h3>Email: <span>trungtran123@gmail.com</span></h3>
-          <h3>Học vấn: <span>Đại học</span></h3>
-          <h3>Bằng cấp: <span>Chứng chỉ Công nghệ thông tin</span></h3>
-          <h3>Kĩ năng:</h3>
-          <ul>
-              <li><h3>Thuyết trình: <span>Tốt</span></h3></li>
-              <li><h3>Lập trình: <span>Tốt</span></h3></li>
-              <li><h3>Giao tiếp: <span>Tốt</span></h3></li>
-          </ul>
-          <h3>Kinh nghiệm:</h3>
-          <ul>
-              <li><span>Cài win dạo từ năm 2010</span></li>
-              <li><span>Giao tiếp với người nội địa ở mức tốt</span></li>
-              <li><span>Viết chương trình hiển thị 'Hello World' bằng tất cả ngôn ngữ lập trình</span></li>
-          </ul>
-          <h3>Định hướng phát triển: <span>Trở thành 1 Lập trình viên giỏi trong tương lai</span></h3>
-      </div>
-  <img src="https://haycafe.vn/wp-content/uploads/2021/11/Anh-avatar-dep-chat-lam-hinh-dai-dien.jpg" alt="">
-  </div>
+<form method="get" action="simpleform.html" class = "wufoo">
+<h2>Order Form</h2>
+  <p>What would you like to buy?</p>
+  <select>
+      <option value = "  ">A</option>
+      <option>B (+  0.5$)</option>
+      <option>C (+  0.5$)</option>
+  </select>
+     <p>How many would you like to order?</p>
+  <input type="radio" name="rd"/> 1 - $10 <br/>
+  <input type="radio" name="rd"/> 2 - $20 <br/>
+  <input type="radio" name="rd"/> 3 - $25 <br/
+>
+<p>Name <span style="color: red">*</span> </p>
+  <input type = "text" name="firstname" placeholder="FirstName" size="15"/>
+  <input type = "text" name="lastname" placeholder="LastName" size="15"/>
+  <p>Email</p>
+  <input type = "text" name="email" size="35"/>
+  <p>Phone Number</p>
+  <input type = "text" name="phone1" size="5"/> -
+  <input type = "text" name="phone2" size="5"/> -
+  <input type = "text" name="phone3" size="5"/>
+  <p><input type = "button" name="btSubmit" value="Submit"/></p>
+</form>
 </body>
-</html>
