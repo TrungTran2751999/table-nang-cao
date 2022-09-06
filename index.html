@@ -1,80 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <style>
-  body {
-    padding: 50px;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-td, th {
-    padding: 20px;
-    border: 1px solid black;
-}
-th{
-    font-family: 'Patua One', cursive;
-    font-size:16px;
-    font-weight:400;
-    color:#fff;
-    text-align:center;
-    padding:20px;
-    background-color: #d61b06;
-    border-color: white;
-}
-td{
-    font-family: 'Open Sans', sans-serif;
-    font-weight:400;
-    color:#5f6062;
-    font-size:13px;
-    padding:20px 20px 20px 20px;
-    border-bottom:1px solid #e0e0e0;
-    text-align: center;
-}
-
-.hover {
-    background: red;
-}
+    .form-container{
+        width: 40%;
+        box-shadow: blue 0px 0px 20px 0px;
+    }
+    .container{
+        padding: 10px 0px 10px 50px;
+    }
+    h3{
+        background-color: #ff4c00;
+        text-align: center;
+        margin: 20px 2px 10px 2px;
+        color: white;
+        padding: 3px 0;
+        margin-top: 10px;
+    }
+    .input-dang-ki{
+        margin-bottom: 10px;
+    }
+    .email-input{
+        margin-left: 23px;
+    }
+    .input-check-box{
+        display: flex;
+    }
+    .list-checkbox{
+        margin-left: 9px;
+        width: 400px;
+        display: flex;
+        gap: 20px
+    }
+    .list-button{
+        margin-left: 60px;
+    }
+    input[type="submit"]{
+        padding: 5px
+    }
+    input[type="button"]{
+        padding: 5px
+    }
+    .input-label{
+        color: blue
+    }
+    .checkbox-label{
+        color: orange
+    }
+    .ho-ten{
+        width: 230px;
+    }
 </style>
 <body>
-  <h2> Thời Khóa Biểu</h2>
-  <table>    
-      <tr>
-          <th rowspan=2>Thứ</th>
-          <th colspan=2>Hoạt động</th>
-      </tr>
-      <tr>
-          <th>Sáng</th>
-          <th>Chiều</th>
-      </tr>
-      <tr>
-          <td>Thứ Hai</td>
-          <td>Thể dục</td>
-          <td>HD trò chơi mới</td>
-      </tr>
-      <tr>
-          <td>Thứ 3</td>
-          <td>Nhận biết tập nói</td>
-          <td>Rèn nề nếp,kỹ năng sống</td>
-      </tr>
-      <tr>
-          <td>Thứ 4</td>
-          <td>Âm Nhạc </td>
-          <td>Vui chơi</td>
-      </tr>
-      <tr>
-          <td>Thứ 5</td>
-          <td>Văn Học</td>
-          <td>Nhận Biết các giá trị sống</td>
-      </tr>
-  </table>
+    <form action="https://github.com/" class="form-container" method="GET">
+        <h3>SỞ THÍCH CỦA BẠN</h3>
+        <div class="container">
+            <div class="input-dang-ki">
+                <label class="input-label">Họ và tên</label>
+                <input type="text" class="ho-ten" name="hovaten"/>
+            </div>
+            <div class="input-dang-ki email-input">
+                <label class="input-label">Email</label>
+                <input type="text" class="email" name="email"/>
+            </div>
+            <div class="input-dang-ki input-check-box">
+                <label class="input-label">Sở thích</label>
+                <div class="list-checkbox">
+                    
+                </div>
+            </div>
+            <div class="list-button">
+                <input type="submit" value="Gửi thông tin" />
+                <input type="button" value="Nhập lại" onclick=reset() />
+            </div>
+        </div>
+    </form>
+<script>
+    let arr = [['Thể thao', 'Lướt web', 'Du lịch'], ['Âm nhạc', 'Chơi game'], ['Đọc sách', 'Điện ảnh'], ]
+    let arrName = [['thethao', 'luotweb', 'dulich'], ['amnhac', 'choigame'], ['docsach', 'dienanh']]
+    for(let i=arr.length-1; i>=0; i--){
+        let elementParent = `<div class="checkBox-parent checkBox-parent-${i}"></div>`
+        document.querySelector('.list-checkbox').insertAdjacentHTML('afterbegin',elementParent)
+        for(let j=arr[i].length-1; j>=0; j--){
+            let element = `<div><input type="checkbox" class="check-box" name="${arrName[i][j]}"/><label class="checkbox-label">${arr[i][j]}</label></div>`
+            document.querySelector(`.checkBox-parent-${i}`).insertAdjacentHTML('afterbegin', element)
+        }
+
+    }
+    function reset(){
+        document.querySelector(input[type="text"]).value = ''
+        document.querySelector(input[type="checkbox"]).value = false
+    }
+</script>
 </body>
 </html>
