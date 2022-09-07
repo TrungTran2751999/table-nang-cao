@@ -7,102 +7,135 @@
     <title>Document</title>
 </head>
 <style>
-    table{
+    .bt-1 table{
+        width: 500px;
+        height: 500px;
         border-collapse: collapse;
     }
-    th ,td {
+    .white{
+        background-color: black;
+        width: 100%;
+        height: 100%;
+    }
+    .bt-1{
+        background-color: orange;
+        width: 50%;
+    }
+    .bt-2 table{
+        text-align: center;
+    }
+    .bt-2 table tr th{
         padding: 5px;
     }
-    .bt-2 h1, .bt-2 .table td{
-        margin-left: 200px;
-        color: blue
+    .table-calendar{
+        border-collapse: collapse;
     }
-    .right{
-        text-align: right;
-    }
-    .table-bt-1 th, .table-bt-2 th{
-        background-color: #fefb00;
+    .table-calendar, .table-calendar tr, .table-calendar td{
+        border: 2px solid grey;
+        padding: 20px;
+        font-weight: bolder;
+        font-size: 20px;
+    } 
+    sub{
+        font-size: 12px;
+        font-weight: lighter;
+        color: black;
     }
 </style>
 <body>
-    <div class="bt">
-        <h2>Thời khóa biểu lớp T09081</h2>
-        <table border="1">
-            <tr class="table-bt-1">
-                <th>Thứ 3</th>
-                <th>Thứ 5</th>
-                <th>Thứ 7</th>
-            </tr>
-            <tr>
-                <td>CF - T1,L1</td>
-                <td>CF - T2,L2</td>
-                <td>CF - T3,L3</td>
-            </tr>
-            <tr>
-                <td>CF - T4,L4</td>
-                <td>CF - Written Test</td>
-                <td>CF - T1,L1</td>
-            </tr>
+    <div class="bt-1">
+        <table>
+            <tbody></tbody>
         </table>
     </div>
-    <div class="bt bt-2">
-        <h1>Thời khóa biểu</h1>
-        <table class="table">
-            <colgroup>
-                <col width="260px">
-                <col width="280px">
-            </colgroup>
-            <tr>
-                <td>Lớp: T9081</td>
-                <td class="right">Thời gian học: 13:30 - 17:30</td>
+    <div class="bt-2">
+        <table>
+            <colgroup span="7" width="75px"></colgroup>
+            <tr><th colspan="7">Tháng 10 - October</th></tr>
+            <tr style="font-weight: bolder; color: white;">
+                <th style="background-color: red;">C.Nhật</th>
+                <th style="background-color: orange;">T.Hai</th>
+                <th style="background-color: orange;">T.Ba</th>
+                <th style="background-color: orange;">T.Tư</th>
+                <th style="background-color: orange;">T.Năm</th>
+                <th style="background-color: orange;">T.Sáu</th>
+                <th style="background-color: blue;">T.Bảy</th>
             </tr>
-            <tr>
-                <td>Giáo viên: KhoaNV</td>
-                <td class="right">Ngày học: Thứ 3, 5, 7</td>
-            </tr>
-            <tr>
-                <td>Phòng học: Class3/Lab3</td>
-                <td></td>
+            <tr style="">
+                <th style="color: red; font-weight: lighter;">Sun</th>
+                <th style="font-weight: lighter;">Mon</th>
+                <th style="font-weight: lighter;">Tue</th>
+                <th style="font-weight: lighter;">Wed</th>
+                <th style="font-weight: lighter;">Thu</th>
+                <th style="font-weight: lighter;">Fri</th>
+                <th style="color: blue; font-weight: lighter;">Sat</th>
             </tr>
         </table>
-        <table border="1" class="table-2">
-            <tr class="table-bt-2">
-                <th colspan="3" style="background-color: white"></th>
-                <th>Thứ 3</th>
-                <th>Thứ 5</th>
-                <th>Thứ 7</th>
-            </tr>
-            <tr style="background-color: #ffb300;">
-                <th>Tuần</th>
-                <th>Ngày bắt đầu</th>
-                <th>Ngày kết thúc</th>
-                <th colspan="3">Môn học</th>
-            </tr>
-            <tr>
-                <td>01</td>
-                <td>01/09/2009</td>
-                <td>05/09/2009</td>
-                <td>CF - T1,L1</td>
-                <td>CF - T2,L2</td>
-                <td>CF - T3,L3</td>
-            </tr>
-            <tr>
-                <td>02</td>
-                <td>08/09/2009</td>
-                <td>12/09/2009</td>
-                <td>CF - T4,L4</td>
-                <td>CF - Written Test</td>
-                <td>CF - T1,L1</td>
-            </tr>
-            <tr>
-                <td>..</td>
-                <td>..</td>
-                <td>..</td>
-                <td>..</td>
-                <td>..</td>
-                <td>..</td>
-            </tr>
+        <table class="table-calendar" border="1">
+            <tbody>
+                <colgroup span="7" width="77px"></colgroup>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>1<sub>13</sub></td>
+                    <td>2<sub>14</sub></td>
+                    <td style="color: blue">3<sub>15</sub></td>
+                </tr>
+            </tbody>
         </table>
     </div>
+<script>
+    let arr = ["A", "B", "C", "D", "E", "F", "G", "H"]
+    for(let i=1; i<=9; i++){
+        document.querySelector('tbody').insertAdjacentHTML('beforeend',`<tr class="tr-${i}"></tr>`)
+        for(let j=1; j<=9; j++){
+            //DAnh so thu tu cot
+            if(i==1 && j==1){
+                document.querySelector(`.tr-${i}`).insertAdjacentHTML('beforeend', `<td width="80px""></td>`)
+            }else if(i == 1 && j!=1){
+                document.querySelector(`.tr-${i}`).insertAdjacentHTML('beforeend', `<td style="text-align: center; font-weight: bolder" height="5px">${j-1}</td>`)
+            }
+            //DAnh so thu tu hang
+            if(i>1 && j==1){
+                document.querySelector(`.tr-${i}`).insertAdjacentHTML('beforeend', `<td style="background-color: orange; text-align: center; font-weight: bolder" width="5px" height="5px">${arr[i-2]}</td>`)
+            }
+            //Ve ban co vua
+            if(i % 2 == 0 && i!=1 && j!=1){
+                if(j % 2 == 0){
+                    document.querySelector(`.tr-${i}`).insertAdjacentHTML('beforeend', '<td style="background-color: white;"></td>')
+                }else{
+                    document.querySelector(`.tr-${i}`).insertAdjacentHTML('beforeend', '<td style="background-color: black;"></td>')
+                }
+            }else if(i % 2!= 0 && i!=1 && j!=1){
+                if(j % 2 == 0){
+                    document.querySelector(`.tr-${i}`).insertAdjacentHTML('beforeend', '<td style="background-color: black;"></td>')
+                }else{
+                    document.querySelector(`.tr-${i}`).insertAdjacentHTML('beforeend', '<td style="background-color: white;"></td>')
+                }
+            }
+        }
+    }
+</script>
+<script>
+    for(let i=0; i<=3; i++){
+        document.querySelector('.table-calendar').insertAdjacentHTML('beforeend', `<tr class="tr-tr-${i}"></tr>`)
+        for(j=4+(7*i); j<=4+(7*i)+6; j++){
+            if(12+j < 30){
+                document.querySelector(`.tr-tr-${i}`).insertAdjacentHTML('beforeend', `<td id="td-${i}-${j}">${j}<sub>${12+j}</sub></td>`)
+            }else if(12+j == 30){
+                document.querySelector(`.tr-tr-${i}`).insertAdjacentHTML('beforeend', `<td id="td-${i}-${j}">${j}<sub>1.9</sub></td>`)
+            }else{
+                document.querySelector(`.tr-tr-${i}`).insertAdjacentHTML('beforeend', `<td id="td-${i}-${j}">${j}<sub>${j-17}</sub></td>`)
+            }
+            if(j == 4+(7*i)){
+                document.getElementById(`td-${i}-${j}`).style.color = 'red'
+            }else if(j == 4+(7*i)+6){
+                document.getElementById(`td-${i}-${j}`).style.color = 'blue'
+            }
+        }
+    }
+</script>
 </body>
 </html>
